@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales | Store Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Store Manager</h1>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+          <li><a href="products.html"><span class="icon">📦</span> Products</a></li>
+          <li class="active"><a href="sales.html"><span class="icon">💰</span> Sales</a></li>
+          <li><a href="purchases.html"><span class="icon">🛒</span> Purchases</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="logoutBtn" class="btn-logout">Logout</button>
+      </div>
+    </aside>
+    
+    <main class="main-content">
+      <header class="content-header">
+        <h2>Sales Management</h2>
+        <div class="user-info">
+          <span id="userName">User</span>
+        </div>
+      </header>
+      
+      <div class="content-actions">
+        <button id="addSaleBtn" class="btn-primary">Record New Sale</button>
+      </div>
+      
+      <div class="sales-container">
+        <table class="data-table" id="salesTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="salesTableBody">
+            <!-- Sales will be added here dynamically -->
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Add Sale Modal -->
+      <div id="saleModal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h3>Record New Sale</h3>
+          
+          <form id="saleForm">
+            <div class="form-group">
+              <label for="saleProduct">Product</label>
+              <select id="saleProduct" required>
+                <option value="">Select a product</option>
+                <!-- Products will be added here dynamically -->
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="saleQuantity">Quantity</label>
+              <input type="number" id="saleQuantity" min="1" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="saleUnitPrice">Unit Price (DH)</label>
+              <input type="number" id="saleUnitPrice" min="0" step="0.01" readonly>
+            </div>
+            
+            <div class="form-group">
+              <label for="saleTotal">Total (DH)</label>
+              <input type="number" id="saleTotal" min="0" step="0.01" readonly>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Record Sale</button>
+              <button type="button" class="btn-secondary" id="cancelSaleBtn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="js/main.js"></script>
+  <script src="js/sales.js"></script>
+</body>
+</html>

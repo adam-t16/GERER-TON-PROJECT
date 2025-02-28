@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Store Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Store Manager</h1>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active"><a href="index.html"><span class="icon">📊</span> Dashboard</a></li>
+          <li><a href="products.html"><span class="icon">📦</span> Products</a></li>
+          <li><a href="sales.html"><span class="icon">💰</span> Sales</a></li>
+          <li><a href="purchases.html"><span class="icon">🛒</span> Purchases</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <button id="logoutBtn" class="btn-logout">Logout</button>
+      </div>
+    </aside>
+    
+    <main class="main-content">
+      <header class="content-header">
+        <h2>Dashboard</h2>
+        <div class="user-info">
+          <span id="userName">User</span>
+        </div>
+      </header>
+      
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <div class="stat-icon sales-icon">💰</div>
+          <div class="stat-info">
+            <h3>Total Sales</h3>
+            <p id="totalSales">0,00 DH</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon purchases-icon">🛒</div>
+          <div class="stat-info">
+            <h3>Total Purchases</h3>
+            <p id="totalPurchases">0,00 DH</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon profit-icon">📈</div>
+          <div class="stat-info">
+            <h3>Profit</h3>
+            <p id="totalProfit">0,00 DH</p>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon products-icon">📦</div>
+          <div class="stat-info">
+            <h3>Products</h3>
+            <p id="totalProducts">0</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="dashboard-charts">
+        <div class="chart-container">
+          <h3>Sales vs Purchases</h3>
+          <canvas id="salesVsPurchasesChart"></canvas>
+        </div>
+        
+        <div class="chart-container">
+          <h3>Top Selling Products</h3>
+          <canvas id="topProductsChart"></canvas>
+        </div>
+      </div>
+      
+      <div class="low-stock-alert" id="lowStockContainer">
+        <h3>Low Stock Alert</h3>
+        <div id="lowStockList" class="low-stock-list">
+          <!-- Low stock items will be added here dynamically -->
+        </div>
+      </div>
+    </main>
+  </div>
+  
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
