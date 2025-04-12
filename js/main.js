@@ -48,15 +48,16 @@ function initApp() {
   }
 }
 
-// Format currency
+// Format monnaie (version FR - Maroc)
 function formatCurrency(amount) {
-  return new Intl.NumberFormat('ar-MA', {
+  return new Intl.NumberFormat('fr-MA', {
     style: 'currency',
     currency: 'MAD',
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   }).format(amount);
 }
+
 
 // Generate unique ID
 function generateId() {
