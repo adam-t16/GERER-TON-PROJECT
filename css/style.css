@@ -482,3 +482,43 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* Style général pour les boutons */
+.btn {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Bouton suppression rouge */
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+}
+.btn-danger:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Bouton reset / warning */
+.btn-warning {
+  background-color: #f39c12;
+  color: white;
+}
+.btn-warning:hover {
+  background-color: #d68910;
+  transform: scale(1.05);
+}
+
+/* Icône dans le bouton */
+.btn i {
+  font-size: 18px;
+}
