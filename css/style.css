@@ -482,7 +482,7 @@ body {
     grid-template-columns: 1fr;
   }
 }
-/* Style général pour les boutons */
+/* Bouton de base */
 .btn {
   padding: 10px 20px;
   margin: 10px 5px;
@@ -498,27 +498,27 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Bouton suppression rouge */
+/* Bouton danger (supprimer) */
 .btn-danger {
-  background-color: #e74c3c;
-  color: white;
+  background-color: var(--danger-color);
+  color: var(--light-color);
 }
 .btn-danger:hover {
-  background-color: #c0392b;
+  background-color: #d4166f; /* Slightly darker shade manually for hover */
   transform: scale(1.05);
 }
 
-/* Bouton reset / warning */
+/* Bouton warning (réinitialiser) */
 .btn-warning {
-  background-color: #f39c12;
-  color: white;
+  background-color: var(--warning-color);
+  color: var(--light-color);
 }
 .btn-warning:hover {
-  background-color: #d68910;
+  background-color: #d67d0c; /* Slightly darker hover */
   transform: scale(1.05);
 }
 
-/* Icône dans le bouton */
+/* Icônes dans le bouton */
 .btn i {
   font-size: 18px;
 }
