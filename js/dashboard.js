@@ -8,12 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalProfitElement = document.getElementById('totalProfit');
   const totalProductsElement = document.getElementById('totalProducts');
   const lowStockList = document.getElementById('lowStockList');
-  
+  const deleteSalesBtn = document.getElementById('deleteSalesBtn');
+  const deletePurchasesBtn = document.getElementById('deletePurchasesBtn');
+  const deleteAllFinanceBtn = document.getElementById('deleteAllFinanceBtn');
   // Load dashboard data
   loadDashboardStats();
   loadLowStockAlerts();
   initCharts();
-  
+  if (deleteSalesBtn) {
+    deleteSalesBtn.addEventListener('click', () => {
+      if (confirm("Voulez-vous vraiment supprimer toutes les ventes ?")) {
+        localStorage.removeItem('sales');
+        loadDashboardStats();
+        initCharts();
+        alert("Toutes les ventes ont été supprimées.");
+      }
+    });
+  }
+
+  if (deletePurchasesBtn) {
+    deletePurchasesBtn.addEventListener('click', () => {
+      if (confirm("Voulez-vous vraiment supprimer tous les achats ?")) {
+        localStorage.removeItem('purchases');
+        loadDashboardStats();
+        initCharts();
+        alert("Tous les achats ont été supprimés.");
+      }
+    });
+  }
+
+  if (deleteAllFinanceBtn) {
+    deleteAllFinanceBtn.addEventListener('click', () => {
+      if (confirm("Voulez-vous réinitialiser toutes les données financières (ventes, achats) ?")) {
+        localStorage.removeItem('sales');
+        localStorage.removeItem('purchases');
+        loadDashboardStats();
+        initCharts();
+        alert("Toutes les données financières ont été réinitialisées.");
+      }
+    });
+  }
   // Functions
   function loadDashboardStats() {
     // Get data from localStorage
